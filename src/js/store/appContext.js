@@ -21,12 +21,14 @@ const injectContext = PassedComponent => {
 			})
 		);
 
-		useEffect(() => {}, []);
-		state.actions.loadContact();
-		state.actions.addContact();
-		state.actions.updateContact();
-		state.actions.deleteContact();
-		// the initial value for the context its not null anymore, but the current state of this component,
+		useEffect(() => {
+			state.actions.loadContact();
+			state.actions.addContact();
+			state.actions.updateContact();
+			state.actions.deleteContact();
+		}, []);
+
+		//ntext its not null anymore, but the current state of this component,
 		// the context will have a getStore and setStore functions available then, because they were declared
 		// on the state of this component
 		return (
